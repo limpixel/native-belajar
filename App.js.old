@@ -1,0 +1,66 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
+
+import Home from './src/screen/Home';
+import Contact from './src/screen/Contact';
+import About from './src/screen/About';
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = focused
+              ? 'home'
+              : 'home';
+          } else if (route.name === 'About') {
+            iconName = focused ? 'info-circle' : 'info-circle';
+          } else if (route.name === 'Contact') {
+            iconName = focused ? 'info-circle' : 'info-circle';
+          }
+
+          return <FontAwesome5 name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: {
+          position: 'absolute',
+          left: 20, 
+          right: 20,
+          bottom: 20,
+          borderRadius: 12,
+          backgroundColor: '#121212',
+          height: 65,
+        },
+        tabBarShowLabel: false,
+        
+      })}
+    >
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="About" component={About} />
+      <Tab.Screen name="Contact" component={Contact} />
+    </Tab.Navigator>
+  </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
