@@ -12,6 +12,7 @@ import Belajar from './src/belajar/Belajar';
 import AppContext, {AppProvider} from './src/screen/AppContext';
 import BelajarUseContext from './src/belajar/BelajarUseContext';
 import Busket from './src/belajar/Busket';
+import BelajarFancyAlert from './src/belajar/BelajarFancyAlert';
 
 import Basket from './src/ujian/Basket';
 import Product from './src/ujian/Product';
@@ -33,6 +34,7 @@ export default function App() {
             options={({ route }) => ({ title: `Total Quantity : ${route.params.qty}` })} />
           <Stack.Screen name='Product' component={Product} options={{ title: 'Product Page'}} />
           <Stack.Screen name='Basket' component={Basket} options={{ headerShown: true }} />
+          <Stack.Screen name='Alert' component={BelajarFancyAlert} options={{ headerShown: true }} />
         </Stack.Navigator>
         
 

@@ -20,6 +20,9 @@ const Belajar = ({ navigation }) => {
       <TouchableOpacity onPress={() => navigation.navigate('Product')} style={[styles.button, styles.marginBottom]} >
         <Text style={styles.title}>Product</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Alert')} style={[styles.button, styles.marginBottom]} >
+        <Text style={styles.title}>Fancy Alert</Text>
+      </TouchableOpacity>
     </View>
   )
 }
