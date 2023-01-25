@@ -1,29 +1,48 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, {useContext} from 'react'
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useContext } from 'react'
 import AppContext from '../screen/AppContext'
 
 const Belajar = ({ navigation }) => {
   const { konter } = useContext(AppContext);
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('BelajarUseState', {
-        getTitle: 'useState page'
-      })} style={[styles.button, styles.marginBottom]} >
-        <Text style={styles.title}>Use State</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('BelajarUseContext')} style={[styles.button, styles.marginBottom]} >
-        <Text style={styles.title}>Use Context</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Busket', { qty: konter })} style={[styles.button, styles.marginBottom]}  >
-        <Text style={styles.title}>Busket</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Product')} style={[styles.button, styles.marginBottom]} >
-        <Text style={styles.title}>Product</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Alert')} style={[styles.button, styles.marginBottom]} >
-        <Text style={styles.title}>Fancy Alert</Text>
-      </TouchableOpacity>
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.navigate('BelajarUseState', {
+          getTitle: 'useState page'
+        })} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Use State</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('BelajarUseContext')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Use Context</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Busket', { qty: konter })} style={[styles.button, styles.marginBottom]}  >
+          <Text style={styles.title}>Busket</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Product')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Product</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Alert')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Fancy Alert</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('LoginFancy')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Ujian Fancy Alert</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Svg')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>SVG</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('RadioButton')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Radio Button</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('CheckBox')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Checkbox Button</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('SignUpPage')} style={[styles.button, styles.marginBottom]} >
+          <Text style={styles.title}>Ujian SignUp</Text>
+        </TouchableOpacity>
+
+
+      </View>
+    </ScrollView>
   )
 }
 
